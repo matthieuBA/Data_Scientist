@@ -83,7 +83,8 @@ puts "Handle par ordre alpha ="
 print tab_s_a
 puts
 
-#tri by length
+#tri by length a
+
 tab_s_l = tab.sort_by(&:length)
 puts "50 Plus court="
 puts tab_s_l[0, 50]
