@@ -48,6 +48,9 @@ def number_handle_with_upper_first(tab, number_handle)
   tab.each do |var|
     # print var.chars
     char = var[1]
+    if char == "_"
+      char = "a"
+    end
     if char === char.capitalize
       # puts 'Character is uppercase.'
       nb += 1
