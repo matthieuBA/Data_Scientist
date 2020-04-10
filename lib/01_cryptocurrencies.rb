@@ -26,7 +26,7 @@ my_hash = Hash[tab_bitcoin.zip tab_values]
 
 def hash_ordre_decroissant_prix(my_hash)
   hash_ordre_decroissant_prix = my_hash.sort_by { |cle, valeur| valeur.delete("$").to_f }.reverse.to_h
-  afficher_combien(hash_ordre_decroissant_prix)
+  # afficher_combien(hash_ordre_decroissant_prix)
   return hash_ordre_decroissant_prix
 end
 
@@ -34,7 +34,7 @@ end
 
 def hash_ordre_croissant_prix(my_hash)
   hash_ordre_croissant_prix = my_hash.sort_by { |cle, valeur| valeur.delete("$").to_f }.to_h
-  afficher_combien(hash_ordre_croissant_prix)
+  # afficher_combien(hash_ordre_croissant_prix)
 end
 
 # hash_ordre_croissant_prix(my_hash)
@@ -63,7 +63,7 @@ def max_value(my_hash)
   n = 0
   hash_ordre_decroissant_prix(my_hash).each do |devise, prix|
     if prix.delete("$").to_f < 6000
-      print "#{devise} est à #{prix}    (c'est la plus forte valeur inferieur à 6000$"
+      print "#{devise} est à #{prix}    (c'est la plus forte valeur inferieur à 6000$)"
       n += 1
       break
     end
@@ -74,8 +74,8 @@ end
 # max_value(my_hash)
 
 def perform(my_hash)
-  hash_ordre_decroissant_prix(my_hash)
-  hash_ordre_croissant_prix(my_hash)
+  afficher_combien(hash_ordre_decroissant_prix(my_hash))
+  afficher_combien(hash_ordre_croissant_prix(my_hash))
   coin(my_hash)
   inf_6000_(my_hash)
   max_value(my_hash)
