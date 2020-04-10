@@ -30,21 +30,21 @@ def hash_ordre_decroissant_prix(my_hash)
   return hash_ordre_decroissant_prix
 end
 
-hash_ordre_decroissant_prix(my_hash)
+# hash_ordre_decroissant_prix(my_hash)
 
 def hash_ordre_croissant_prix(my_hash)
   hash_ordre_croissant_prix = my_hash.sort_by { |cle, valeur| valeur.delete("$").to_f }.to_h
   afficher_combien(hash_ordre_croissant_prix)
 end
 
-hash_ordre_croissant_prix(my_hash)
+# hash_ordre_croissant_prix(my_hash)
 
 def coin(my_hash)
   nbr_coin = my_hash.count { |nbr| nbr.to_s.match?(/coin/i) }
   puts "Handle contenant coin =#{nbr_coin}"
 end
 
-coin(my_hash)
+# coin(my_hash)
 
 def inf_6000_(my_hash)
   n = 0
@@ -57,7 +57,7 @@ def inf_6000_(my_hash)
   puts "il y a #{n} devises inferieur à 6000$"
 end
 
-inf_6000_(my_hash)
+# inf_6000_(my_hash)
 
 def max_value(my_hash)
   n = 0
@@ -71,4 +71,14 @@ def max_value(my_hash)
   puts
 end
 
-max_value(my_hash)
+# max_value(my_hash)
+
+def perform(my_hash)
+  hash_ordre_decroissant_prix(my_hash)
+  hash_ordre_croissant_prix(my_hash)
+  coin(my_hash)
+  inf_6000_(my_hash)
+  max_value(my_hash)
+end
+
+perform(my_hash)
